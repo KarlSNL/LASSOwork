@@ -1,4 +1,4 @@
-\documentclass[11pt]{amsart}
+\documentclass[11pt]{article}
 \usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
 \geometry{a4paper}                   % ... or a4paper or a5paper or ... 
 %\geometry{landscape}                % Activate for for rotated page geometry
@@ -24,11 +24,27 @@
 \section{Introduction \& Motivation}
 The use of regularisation in econometrics is far from widespread. The problem of variable selection is commonly side-stepped with legitimate appeals to theoretical frameworks. This paper extends this to consider situations where theory is not prescriptive and into situations where one might be tempted into using hypothesis tests to determine the independent variables in one's analyses. The use of these machine learning techniques is far from a carte blanche for mindless data mining. The use and selection of relevant data is still driven by theoretical foundations. However it sometimes informative to ascertain which variables are driving the underlying relationships and thus the problem  of variable selection continues to exist. 
 
-Further the growth of data availability means that it is not uncommon to face a situation where $p<<n$. This means that the standard approach of ordinary least squares is not feasible without some form of variable selection. The literature on the use and abuse of stepwise regression is significant. The situation of excessive data can be dealt with by the regularised regressions, such as the LASSO and elastic net, for example  \cite{Hastie} \& \cite{zouphd}. It is not uncommon that approaches such as the Aikake or Schwartz Information criteria are used in the variable selection problem \cite{aid}. 
+Further the growth of data availability means that it is not uncommon to face a situation where $p<<n$. This means that the standard approach of ordinary least squares is not feasible without some form of variable selection. The literature on the use and abuse of stepwise regression is significant. The situation of `excessive data' can be dealt with by the regularised regressions, such as the LASSO and elastic net, for example  \cite{Hastie} \& \cite{zouphd} where it is possible to have more independent variables than observations, unlike the situation in standard OLS. It is not uncommon that approaches such as the Aikake or Schwartz Information criteria are used in the variable selection problem (\cite{aic} amongst others). These are not without their problems, though perhaps not as many as the frequently used stepwise regression techniques. These can further be contrasted with subset regressions, which take the various permutations of individual variables leading to the empty boast of `I have run a million regressions'.
 
 
 
 \section{Literature}
+Within the econometric literature, regularisation has a limited history. Ridge regression is perhaps the best known example (for example \cite{hoerl1970}), where the problem of multicollinearity is dealt with by the imposition of a constraint on the coefficients of the regressions. This estimator is known to be biased however it is the case that the approach gives estimators with lower standard errors. The penalised function for the estimation is given by:
+\begin{eqnarray}
+\beta_R&=&\min_\beta \sum_{i=1}^N(y-\beta_0-\sum_{j=1}^p \beta_j x_{ij})^2+\lambda \sum \beta_j^2\\
+&=&\min_\beta \left(y-X\beta\right)^T\left(y-X\beta\right)+\lambda\beta^T\beta \nonumber \\
+&=&\left(X^TX+\lambda I\right)^{-1}X^T y \nonumber
+\end{eqnarray}
+
+This approach does not perform any form of variable selection  as, although it does shrink coefficients, it does not shrink them to 0. the $\lambda$ parameter acts as the shrinkage control with $\lambda=0$ being no shrinkage and therefore ordinary least squares. This can be compared to the Least Absolute Shrinkage \& Selection Operator (LASSO). In this case the penalty is based on the $\ell_1$ norm rather than the $\ell_2$ norm of the ridge approach. Hence the problem becomes:
+\begin{eqnarray}
+\beta_R&=&\min_\beta \sum_{i=1}^N(y-\beta_0-\sum_{j=1}^p \beta_j x_{ij})^2+\lambda \sum \mid\beta_j\mid\\
+&=&\min_\beta \left(y-X\beta\right)^T\left(y-X\beta\right)+\lambda\mid\beta\mid \nonumber \\
+%&=&\left(X^TX+\lambda I\right)^{-1}X^T y \nonumber
+\end{eqnarray}
+
+The use of the LASSO is now relatively widespread especially in the genomic 
+
 
 \section{Definition \& Example}
 

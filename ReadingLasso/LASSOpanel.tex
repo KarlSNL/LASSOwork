@@ -1,0 +1,42 @@
+\documentclass[11pt]{amsart}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Regularized Panel Regression}
+\author{Karl Shutes}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\begin{abstract}
+{This paper considers the impact of using the regularisation techniques for the analysis of panel data. This gives rise to a number of useful analyses and approaches not considered elsewhere in the literature.}
+\end{abstract}
+%\section{}
+%\subsection{}
+
+\section{Introduction \& Motivation}
+The use of regularisation in econometrics is far from widespread. The problem of variable selection is commonly side-stepped with legitimate appeals to theoretical frameworks. This paper extends this to consider situations where theory is not prescriptive and into situations where one might be tempted into using hypothesis tests to determine the independent variables in one's analyses. The use of these machine learning techniques is far from a carte blanche for mindless data mining. The use and selection of relevant data is still driven by theoretical foundations. However it sometimes informative to ascertain which variables are driving the underlying relationships and thus the problem  of variable selection continues to exist. 
+
+Further the growth of data availability means that it is not uncommon to face a situation where $p<<n$. This means that the standard approach of ordinary least squares is not feasible without some form of variable selection. The literature on the use and abuse of stepwise regression is significant. The situation of excessive data can be dealt with by the regularised regressions, such as the LASSO and elastic net, for example  \cite{Hastie} \& \cite{zouphd}. It is not uncommon that approaches such as the Aikake or Schwartz Information criteria are used in the variable selection problem \cite{aid}. 
+
+
+
+\section{Literature}
+
+\section{Definition \& Example}
+
+\section{Conclusions}
+
+
+\bibliographystyle{plainnat}
+\bibliography{Bibliography}
+
+
+\end{document}  

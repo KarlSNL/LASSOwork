@@ -28,26 +28,36 @@ Further the growth of data availability means that it is not uncommon to face a 
 
 
 
-\section{Literature}
+\section{Literature Review \& Definitions}
 Within the econometric literature, regularisation has a limited history. Ridge regression is perhaps the best known example (for example \cite{hoerl1970}), where the problem of multicollinearity is dealt with by the imposition of a constraint on the coefficients of the regressions. This estimator is known to be biased however it is the case that the approach gives estimators with lower standard errors. The penalised function for the estimation is given by:
 \begin{eqnarray}
-\beta_R&=&\min_\beta \sum_{i=1}^N(y-\beta_0-\sum_{j=1}^p \beta_j x_{ij})^2+\lambda \sum \beta_j^2\\
+\beta_R&=&\min_\beta \sum_{i=1}^N(y_i-\beta_0-\sum_{j=1}^p \beta_j x_{ij})^2+\lambda \sum \beta_j^2\\
 &=&\min_\beta \left(y-X\beta\right)^T\left(y-X\beta\right)+\lambda\beta^T\beta \nonumber \\
 &=&\left(X^TX+\lambda I\right)^{-1}X^T y \nonumber
 \end{eqnarray}
 
 This approach does not perform any form of variable selection  as, although it does shrink coefficients, it does not shrink them to 0. the $\lambda$ parameter acts as the shrinkage control with $\lambda=0$ being no shrinkage and therefore ordinary least squares. This can be compared to the Least Absolute Shrinkage \& Selection Operator (LASSO). In this case the penalty is based on the $\ell_1$ norm rather than the $\ell_2$ norm of the ridge approach. Hence the problem becomes:
 \begin{eqnarray}
-\beta_R&=&\min_\beta \sum_{i=1}^N(y-\beta_0-\sum_{j=1}^p \beta_j x_{ij})^2+\lambda \sum \mid\beta_j\mid\\
-&=&\min_\beta \left(y-X\beta\right)^T\left(y-X\beta\right)+\lambda\mid\beta\mid \nonumber \\
+\beta_R&=&\min_\beta \sum_{i=1}^N(y_i-\beta_0-\sum_{j=1}^p \beta_j x_{ij})^2+\lambda \sum \mid\beta_j\mid\\
+&=&\min_\beta \left(y-X\beta\right)^T\left(y-X\beta\right)+\lambda\mid\beta\mid \nonumber 
 %&=&\left(X^TX+\lambda I\right)^{-1}X^T y \nonumber
-\end{eqnarray}
+\end{eqnarray}\label{lassodef}
 
-The use of the LASSO is now relatively widespread especially in the genomic 
-The use of the LASSO is now relatively widespread especially in the genomic research, however there is a literature in a number of fields developing. However there is a relative dearth of work in panel data within economics.
+This is clearly shown graphically when considering two parameter estimates, with the LASSO (black) and ridge (red). The estimator loss functions are shown as ellipses.
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=3.6in]{LASSO1} 
+   \caption{Differences Between LASSO \& Ridge Regressions}
+   \label{lasso1}
+\end{figure}
+The point of tangency are the estimates for each technique. The LASSO shrinks $\beta_1$ to 0, whereas the ridge regression approaches it. The OLS estimator is given as $\hat{\beta}$. The parameter $\lambda$ controls the amount of penalty applied to the parameters for the LASSO. \cite{knightfu} show that under certain regularity conditions, 
+
+There is a generalisation such that the $\gamma$-th norm is used. This is the bridge estimator. This has There are a number of similarities between the bridge estimator with $1<\gamma<2$\footnote{The limits here are LASSO and ridge regressions.} however the elastic net approach has non-differentiable corners at the axes (\cite{hastiebook}). This therefore implies that the bridge regression, despite first impressions will not select variables unless $\gamma<1$ in which case the penalty function is non-concave and the estimates may not be unique, though they may be set at zero.
 
 
-\section{Definition \& Example}
+\section{Example}
+
+The LASSO type penalty approach to estimation and variable selection is given in Equation \ref{lassodef}. 
 
 \section{Conclusions}
 

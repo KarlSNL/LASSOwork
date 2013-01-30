@@ -19,6 +19,6 @@ data.frame(getellipse(m1*1.07,m2*1.07,mid=c(4.52,3.5),angle=70))->ell3
 data.frame(getellipse(m1*0.98,m2*0.98,mid=c(4.52,3.5),angle=70))->ell4
 
 
-gg<-ggplot()+geom_line(data=ell2,aes(x=ell2[,1],y=ell2[,2]),col='blue')+geom_line(data=ell3,aes(x=ell3[,1],y=ell3[,2]),col='white')+geom_line(data=ell,aes(x=ell[,1],y=ell[,2]),col='skyblue')+geom_line(data=ell4,aes(x=ell4[,1],y=ell4[,2]),col='white')+geom_line(data=datas,aes(x,y1))+geom_line(data=datas,aes(x,y2))+geom_line(data=datas,aes(x,y3))+geom_line(data=datas,aes(x,y4))+geom_line(data=datas,aes(x,y5),col='red')+geom_line(data=datas,aes(x,y6),col='red')+geom_point(aes(x=4.52,y=3.5),col='black')
+gg<-ggplot()+geom_hline(yintercept=0,lty=2)+geom_vline(xintercept=0,lty=2)+geom_line(data=ell2,aes(x=ell2[,1],y=ell2[,2]),col='blue')+geom_line(data=ell3,aes(x=ell3[,1],y=ell3[,2]),col='white')+geom_line(data=ell,aes(x=ell[,1],y=ell[,2]),col='skyblue')+geom_line(data=ell4,aes(x=ell4[,1],y=ell4[,2]),col='white')+geom_line(data=datas,aes(x,y1))+geom_line(data=datas,aes(x,y2))+geom_line(data=datas,aes(x,y3))+geom_line(data=datas,aes(x,y4))+geom_line(data=datas,aes(x,y5),col='red')+geom_line(data=datas,aes(x,y6),col='red')+geom_point(aes(x=4.52,y=3.5),col='black')
 gg+theme_bw()+ylab(expression(paste(beta[2])))+xlab(expression(paste(beta[1])))+geom_text(label='hat(beta)',parse=TRUE,aes(x=4.25,y=3.5))
 

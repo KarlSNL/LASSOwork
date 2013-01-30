@@ -1,4 +1,4 @@
-\begin{thebibliography}{4}
+\begin{thebibliography}{6}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -13,8 +13,20 @@ H.~Akaike.
 \newblock ISSN 0018-9286.
 \newblock \doi{10.1109/TAC.1974.1100705}.
 
+\bibitem[Fu and Knight(2000)]{knightfu}
+W.~Fu and K.~Knight.
+\newblock Asymptotics for lasso-type estimators.
+\newblock \emph{Annals of Statistics}, 28\penalty0 (5):\penalty0 1356--1378,
+  2000.
+
+\bibitem[Hastie et~al.(2008)Hastie, Tibshirani, and Friedman]{hastiebook}
+T.~Hastie, R.~Tibshirani, and J.~Friedman.
+\newblock \emph{Elements of Statistical Learning; Data Mining, Inference \&
+  Prediction}.
+\newblock {Springer Verlag}, 2008.
+
 \bibitem[Hoerl and Kennard(1970)]{hoerl1970}
-Arthur~E. Hoerl and Robert~W. Kennard.
+A.~E. Hoerl and R.~W. Kennard.
 \newblock Ridge regression: Biased estimation for nonorthogonal problems.
 \newblock \emph{Technometrics}, 12\penalty0 (1):\penalty0 55--67, 1970.
 \newblock \doi{10.1080/00401706.1970.10488634}.
@@ -22,12 +34,12 @@ Arthur~E. Hoerl and Robert~W. Kennard.
   \url{http://www.tandfonline.com/doi/abs/10.1080/00401706.1970.10488634}.
 
 \bibitem[Zou(2005)]{zouphd}
-Hui Zou.
+H.~Zou.
 \newblock \emph{Some Perspectives of Sparse Statistical Modeling}.
 \newblock PhD thesis, Standford University, 2005.
 
 \bibitem[Zou and Hastie(2005)]{Hastie}
-Hui Zou and Trevor Hastie.
+H.~Zou and T.~Hastie.
 \newblock Regularization and variable selection via the elastic net.
 \newblock \emph{Journal of the Royal Statistical Society: Series B (Statistical
   Methodology)}, 67\penalty0 (2):\penalty0 301--320, 2005.

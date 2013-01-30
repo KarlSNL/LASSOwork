@@ -32,14 +32,14 @@ Further the growth of data availability means that it is not uncommon to face a 
 Within the econometric literature, regularisation has a limited history. Ridge regression is perhaps the best known example (for example \cite{hoerl1970}), where the problem of multicollinearity is dealt with by the imposition of a constraint on the coefficients of the regressions. This estimator is known to be biased however it is the case that the approach gives estimators with lower standard errors. The penalised function for the estimation is given by:
 \begin{eqnarray}
 \beta_R&=&\arg\min_\beta \sum_{i=1}^N(y_i-\beta_0-\sum_{j=1}^p \beta_j x_{ij})^2+\lambda \sum \beta_j^2\\
-&=&\arg\min_\beta \sum_i \left(y_i-X_i\beta^T\right)^2+\lambda\beta^T\beta \nonumber \\
+&=&\arg\min_\beta \sum_i \left(Y_i-X_i\beta^T\right)^2+\lambda\beta^T\beta \nonumber \\
 &=&\left(X^TX+\lambda I\right)^{-1}X^T y \nonumber
 \end{eqnarray}
 
 This approach does not perform any form of variable selection  as, although it does shrink coefficients, it does not shrink them to 0. the $\lambda$ parameter acts as the shrinkage control with $\lambda=0$ being no shrinkage and therefore ordinary least squares. This can be compared to the Least Absolute Shrinkage \& Selection Operator (LASSO). In this case the penalty is based on the $\ell_1$ norm rather than the $\ell_2$ norm of the ridge approach. Hence the problem becomes:
 \begin{eqnarray}
 \beta_R&=&\arg\min_\beta \sum_{i=1}^N(y_i-\beta_0-\sum_{j=1}^p \beta_j x_{ij})^2+\lambda \sum \mid\beta_j\mid\\
-&=&\arg\min_\beta \sum_i \left(y_i-X_i^T\beta\right)^2+\lambda\mid\beta\mid \nonumber 
+&=&\arg\min_\beta \sum_i \left(Y_i-X_i^T\beta\right)^2+\lambda\mid\beta\mid \nonumber 
 %&=&\left(X^TX+\lambda I\right)^{-1}X^T y \nonumber
 \end{eqnarray}\label{lassodef}
 
